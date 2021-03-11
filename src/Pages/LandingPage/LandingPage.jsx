@@ -1,127 +1,111 @@
 import React from 'react';
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import bluePlanet from '../../assets/blueplanet.png';
 import purplePlanet from '../../assets/purpleplanet.png';
 import bg from '../../assets/bg.png';
-
-const Section = styled.section`
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #131313;
-`;
-
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 100vh;
-  padding: 3rem calc((100vw-1300px) / 2);
-  color: #fff;
-
-  @media screen and (max-width: 760px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const ColumnLeft = styled.div`
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 5rem 2rem;
-
-  h1 {
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
-  }
-  p {
-    margin: 2rem 0;
-    font-size: 4rem;
-    line-height: 1.1;
-  }
-`;
-const Button = styled(motion.button)`
-  color: #fff;
-  font-size: 1rem;
-  border: 2px solid #fff;
-  background: transparent;
-  padding: 1rem 3rem;
-  outline: none;
-  border-radius: 4px;
-  cursor: pointer;
-`;
-
-const Image = styled.img`
-  position: absolute;
-  max-height: 250px;
-  max-width: 250px;
-  height: 100%;
-  width: 100%;
-`;
-
-const ColumnRight = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  position: relative;
-
-  ${Image}:nth-child(1) {
-    top: 10px;
-    left: 20px;
-  }
-`;
-
-const BgImage = styled.img`
-  position: absolute;
-  max-height: fit-content;
-  height: 100%;
-  right: 0;
-  top: 0;
-  transform: scaleX(-1);
-  @media screen and (max-width: 760px) {
-    visibility: hidden;
-  }
-`;
+import lava from '../../assets/lava.png';
+import mobBg from '../../assets/mobbg.png';
+import { Link } from 'react-router-dom';
+import {
+  Section,
+  Container,
+  ColumnLeft,
+  ColumnRight,
+  Button,
+  FullSizeBG,
+  Image,
+  BgImage,
+  MobBgImg,
+} from './styles';
 
 const LandingPage = () => {
   return (
-    <Section>
-      <Container>
-        <ColumnLeft>
-          <motion.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 2 }}
-          >
-            Hi this is Hamed
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 2 }}
-          >
-            Welcome to my portfolio
-          </motion.p>
+    <>
+      <Section>
+        <Container>
+          <ColumnLeft>
+            <motion.h1
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 2 }}
+            >
+              Hi this is Hamed
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 2 }}
+            >
+              Welcome to my portfolio
+            </motion.p>
 
-          <Button
-            whileHover={{ scale: 1.08 }}
-            whileTap={{ scale: 0.9, backgroundColor: '#67F6E7' }}
-          >
-            Show Me More
-          </Button>
-        </ColumnLeft>
-        <BgImage src={bg} alt="bg" />
+            <Link to="/homepage">
+              <Button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{
+                  scale: 0.95,
+                  backgroundColor: '#67F6E7',
+                  border: 'none',
+                  color: '#000',
+                }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { duration: 2 } }}
+              >
+                Show Me More
+              </Button>
+            </Link>
+            <motion.h5
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 7 }}
+            >
+              <span>Disclaimer:</span>Some of the features of this site is
+              developed based on the latest updates of Chrome and may not work
+              with other browsers or older versions. Please use the latest
+              version of Chrome for best possible experience.{' '}
+              <a href="https://www.google.com/chrome/" target="_blank">
+                Click here
+              </a>{' '}
+              to download the latest version.
+            </motion.h5>
+          </ColumnLeft>
+          <BgImage src={bg} alt="bg" />
+          <FullSizeBG
+            src={lava}
+            alt="FullBg"
+            initial={{ opacity: 0, x: -400 }}
+            animate={{ opacity: 1, x: 0, transition: { duration: 4 } }}
+          />
+          <MobBgImg
+            src={mobBg}
+            alt="mobBg"
+            initial={{ opacity: 0, y: 600 }}
+            animate={{ opacity: 1, y: 0, transition: { duration: 5 } }}
+          />
 
-        <ColumnRight>
-          <Image src={bluePlanet} alt="planet" />
-          <Image src={purplePlanet} alt="planet" />
-        </ColumnRight>
-      </Container>
-    </Section>
+          <ColumnRight>
+            <Image
+              src={bluePlanet}
+              alt="planet"
+              initial={{ opacity: 0, x: -200 }}
+              animate={{ opacity: 1, x: 0, transition: { duration: 3 } }}
+              whileTap={{ scale: 1.2 }}
+              drag={true}
+              dragConstraints={{ left: 50, right: 30, top: 30, bottom: 50 }}
+            />
+            <Image
+              src={purplePlanet}
+              alt="planet"
+              initial={{ opacity: 0, y: 200 }}
+              animate={{ opacity: 1, y: 0, transition: { duration: 3 } }}
+              whileTap={{ scale: 1.2 }}
+              drag={true}
+              dragConstraints={{ left: 50, right: 30, top: 30, bottom: 50 }}
+            />
+          </ColumnRight>
+        </Container>
+      </Section>
+    </>
   );
 };
 

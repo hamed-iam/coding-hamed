@@ -1,0 +1,45 @@
+.main {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #131313;
+}
+
+.main::before,
+.main::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.6;
+}
+.main::before {
+  clip-path: circle(30% at left 20%);
+  background-image: linear-gradient(
+    to right top,
+    #131313,
+    #191919,
+    #1f1f1f,
+    #252525,
+    #2b2b2b
+  );
+}
+.main::after {
+  clip-path: circle(25% at right 80%);
+
+  background-image: linear-gradient(
+    to right top,
+    #131313,
+    #191919,
+    #1f1f1f,
+    #252525,
+    #2b2b2b
+  );
+}
