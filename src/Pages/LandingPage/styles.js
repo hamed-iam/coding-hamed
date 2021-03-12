@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const Section = styled.section`
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -62,6 +66,7 @@ export const ColumnLeft = styled.div`
     }
     h5 {
       margin: 20px 20px;
+      justify-content: flex-end;
     }
   }
 `;
@@ -84,6 +89,15 @@ export const FullSizeBG = styled(motion.img)`
   top: 5px;
   right: 15px;
   max-width: 700px;
+  color: black;
+  filter: drop-shadow(10px 50px 50px);
+
+  @media screen and (max-width: 1210px) and (min-width: 970px) {
+    position: absolute;
+    top: 10%;
+    right: 15px;
+    max-width: 570px;
+  }
 
   @media screen and (max-width: 971px) {
     display: none;
@@ -98,6 +112,8 @@ export const Image = styled(motion.img)`
   max-width: 250px;
   height: 100%;
   width: 100%;
+  color: black;
+  filter: drop-shadow(10px 50px 50px);
 
   @media screen and (max-width: 760px) {
     display: none;
@@ -142,7 +158,9 @@ export const MobBgImg = styled(motion.img)`
   max-height: 100vh;
   top: -50px;
   margin: auto;
+  color: rgba(255, 255, 255, 0.3);
   opacity: 0.4;
+  filter: drop-shadow(10px 50px 100px);
 
   @media screen and (min-width: 759px) {
     display: none;

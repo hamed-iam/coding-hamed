@@ -6,11 +6,11 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/">
-          <LandingPage />
-        </Route>
         <Route exact path="/homepage">
           <Homepage />
+        </Route>
+        <Route path="/">
+          <LandingPage />
         </Route>
       </Switch>
     </Router>

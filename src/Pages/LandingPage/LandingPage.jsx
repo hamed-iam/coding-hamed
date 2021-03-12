@@ -36,7 +36,8 @@ const LandingPage = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 2 }}
             >
-              Welcome to my portfolio
+              Welcome <br />
+              to my portfolio
             </motion.p>
 
             <Link to="/homepage">
