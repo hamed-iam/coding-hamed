@@ -4,7 +4,6 @@ import styles from './Header.module.css';
 import logo from '../../assets/logo.png';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
 const Header = () => {
   return (
     <motion.header

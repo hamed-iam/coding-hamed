@@ -4,17 +4,20 @@ import AboutMeImg from '../../assets/undraw_moonlight_5ksn (1).svg';
 import ProjectImg from '../../assets/undraw_project_completed_w0oq.svg';
 import ContactImg from '../../assets/undraw_contact_us_15o2.svg';
 import { motion } from 'framer-motion';
-
+import AboutMeText from '../../assets/About Me (1).svg';
+import ContactText from '../../assets/Contact (2).svg';
+import ProjectsText from '../../assets/Projects (1).svg';
 const Main = () => {
   return (
     <main className={styles.container}>
       <section className={styles.leftCl}>
         <div className={styles.contentText}>
-          <h1>
-            I'm a React developer, here you can find all the information you
-            need about me. If you have any question feel free to contact me.
-          </h1>
-          <p>just some text for now</p>
+          <h4>
+            Hello
+            <br /> I'm Hamed. A freelance Front-End Developer. I specialize in
+            creating interactive experiences using React.
+          </h4>
+          <p>Feel free to contact me if you have any questions.</p>
         </div>
         <div className={styles.joke}>the jokes wil be here</div>
       </section>
@@ -29,7 +32,7 @@ const Main = () => {
           animate={{ x: 0, transition: { duration: 2 } }}
           className={styles.cardTop}
         >
-          <h2>About Me</h2>
+          <img src={AboutMeText} alt="" className={styles.cardTitle} />
           <img src={AboutMeImg} alt="" />
         </motion.div>
         <motion.div
@@ -37,7 +40,7 @@ const Main = () => {
           animate={{ x: 0, transition: { duration: 2 } }}
           className={styles.cardMid}
         >
-          <h2>Projects</h2>
+          <img src={ProjectsText} alt="" className={styles.cardTitle} />
           <img src={ProjectImg} alt="" />
         </motion.div>
         <motion.div
@@ -45,7 +48,7 @@ const Main = () => {
           animate={{ x: 0, transition: { duration: 2 } }}
           className={styles.cardBottom}
         >
-          <h2>Contact</h2>
+          <img src={ContactText} className={styles.cardTitle} alt="" />
           <img src={ContactImg} alt="" />
         </motion.div>
       </motion.section>

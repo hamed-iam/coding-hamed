@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
 .container {
   height: 89vh;
   margin: auto;
@@ -9,7 +11,7 @@
 }
 
 .leftCl {
-  border: 2px solid whitesmoke;
+  border: 2px solid rgb(165, 165, 165);
   border-radius: 4px;
   display: grid;
   row-gap: 20px;
@@ -17,20 +19,25 @@
 }
 
 .contentText {
-  background-color: brown;
   margin: 20px 20px 0 20px;
-  border: 1px solid whitesmoke;
+  /* border: 1px solid whitesmoke; */
   border-radius: 4px;
+  display: grid;
+}
+.contentText h4,
+p {
+  color: white;
+  justify-self: center;
+  align-self: center;
 }
 .joke {
-  background-color: blueviolet;
   margin: 20px 20px 20px 20px;
-  border: 1px solid whitesmoke;
+  border: 1px solid rgb(165, 165, 165);
   border-radius: 4px;
 }
 
 .rightCl {
-  border: 2px solid whitesmoke;
+  border: 2px solid rgb(165, 165, 165);
   border-radius: 4px;
   display: grid;
   row-gap: 8px;
@@ -38,19 +45,19 @@
   grid-template-rows: 1fr 1fr 1fr;
 }
 .cardTop {
-  border: 1px solid whitesmoke;
+  border: 1px solid rgb(165, 165, 165);
   border-radius: 4px;
   margin: 10px 10px 0 10px;
   display: grid;
 }
 .cardMid {
-  border: 1px solid whitesmoke;
+  border: 1px solid rgb(165, 165, 165);
   border-radius: 4px;
   margin: 10px 10px 0 10px;
   display: grid;
 }
 .cardBottom {
-  border: 1px solid whitesmoke;
+  border: 1px solid rgb(165, 165, 165);
   border-radius: 4px;
   margin: 10px 10px 10px 10px;
   display: grid;
@@ -70,4 +77,48 @@
   max-height: 150px;
   align-self: end;
   justify-self: center;
+}
+
+.cardTitle {
+  height: 70px;
+}
+
+/* @media screen and (max-height: 565) {
+  .container {
+    max-height: 40vh;
+  }
+} */
+@media screen and (max-height: 667px) {
+  .container {
+    max-height: 45vh;
+  }
+  .cardTop img,
+  .cardMid img,
+  .cardBottom img {
+    max-height: 70px;
+  }
+  .leftCl,
+  .rightCl {
+    height: fit-content;
+  }
+}
+@media screen and (min-height: 668px) and (max-height: 820px) {
+  .container {
+    max-height: 50vh;
+  }
+  .cardTop img,
+  .cardMid img,
+  .cardBottom img {
+    max-height: 70px;
+  }
+  .leftCl,
+  .rightCl {
+    height: 80vh;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
 }

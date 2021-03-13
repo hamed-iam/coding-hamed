@@ -8,3 +8,8 @@
   padding-top: 10px;
   background: #131313;
 }
+@media screen and (max-width: 520px) {
+  .main {
+    height: 180vh;
+  }
+}
