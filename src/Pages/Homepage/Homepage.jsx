@@ -8,11 +8,13 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Projects from './Projects/Projects';
 import Contact from './Contact/Contact';
 import Main from '../../components/Main/Main';
-
+import mobCover from '../../assets/backgrounds/pexels-greg-contreras-3177812.jpg';
+import homeCover from '../../assets/backgrounds/pexels-sebastiaan-stam-1480690.jpg';
 const Homepage = () => {
   return (
     <>
       <main className={styles.main}>
+        {/* <img src={homeCover} className={styles.homeCover} alt="" /> */}
         <Router>
           <Header />
           <Route exact path="/homepage">
@@ -31,6 +33,7 @@ const Homepage = () => {
             </Route>
           </Switch>
         </Router>
+        {/* <img src={mobCover} className={styles.mobCover} alt="" /> */}
       </main>
     </>
   );

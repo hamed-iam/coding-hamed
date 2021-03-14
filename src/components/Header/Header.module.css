@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
-
 .header {
   height: 7vh;
   width: 90%;
@@ -7,12 +5,15 @@
   /* background-color: rgb(26, 26, 26); */
   justify-content: center;
   align-items: center;
-  border: 2px solid rgb(165, 165, 165);
+  /* border: 2px solid rgb(165, 165, 165); */
 
   border-radius: 4px;
 
   z-index: 20;
   transition: all 1s ease;
+}
+.link {
+  text-decoration: none;
 }
 .logo a {
   color: white;
@@ -20,6 +21,10 @@
 }
 .logo h3 {
   font-family: 'Yellowtail', cursive;
+}
+.logo img {
+  height: inherit;
+  height: 70px;
 }
 .navbar {
   display: flex;
@@ -40,15 +45,18 @@
 }
 .menu li {
   list-style: none;
-  margin: auto 10px;
-  color: white;
+  margin: auto 15px;
+  color: #d3d3d3;
   cursor: pointer;
   font-size: 17px;
   font-weight: 500;
   transition: all 0.5s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
 }
 .menu li:hover {
-  color: #67f6e7;
+  color: #2dddf5;
   transform: scale(0.95);
 }
 @media screen and (max-width: 520px) {

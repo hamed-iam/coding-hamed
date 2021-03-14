@@ -7,27 +7,7 @@ import axios from 'axios';
 
 const url = 'https://v2.jokeapi.dev/joke/Any';
 
-const fetchData = async () => {
-  try {
-    const { setup, delivery } = await axios.get(url);
-
-    return { setup, delivery };
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 function App() {
-  useEffect(() => {
-    async function fetchData() {
-      const { setup, delivery } = await axios.get(url);
-
-      console.log(setup, delivery);
-      return { setup, delivery };
-    }
-    fetchData();
-  }, []);
-
   return (
     <Router>
       <Switch>

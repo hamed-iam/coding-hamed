@@ -24,11 +24,15 @@
   border-radius: 4px;
   display: grid;
 }
-.contentText h4,
-p {
-  color: white;
+.contentText h3 {
+  color: #d3d3d3;
   justify-self: center;
-  align-self: center;
+  align-self: baseline;
+  margin-top: -120px;
+  letter-spacing: 8px;
+}
+.contentText h3 span {
+  color: #2dddf5;
 }
 .joke {
   margin: 20px 20px 20px 20px;
@@ -62,41 +66,50 @@ p {
   margin: 10px 10px 10px 10px;
   display: grid;
 }
-
-.cardTop img {
-  max-height: 150px;
-  align-self: end;
+.link {
+  justify-self: center;
+  align-self: center;
+  text-decoration: none;
+}
+.hamedCover {
+  height: 60px;
+  justify-self: center;
+  padding-top: 60px;
+}
+.cardText {
+  color: #d3d3d3;
+  justify-self: center;
+  align-self: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+.cardText span {
+  color: #2dddf5;
+}
+.joke {
+  display: grid;
+}
+.joke h2 {
+  margin-bottom: 4rem;
+  font-size: 1rem;
+}
+.joke h2,
+h4,
+h5 {
+  color: #d3d3d3;
   justify-self: center;
 }
-.cardMid img {
-  max-height: 150px;
-  align-self: end;
+.jokesText {
+  margin: 2rem;
   justify-self: center;
-}
-.cardBottom img {
-  max-height: 150px;
-  align-self: end;
-  justify-self: center;
+  align-self: center;
 }
 
-.cardTitle {
-  height: 70px;
-}
-
-/* @media screen and (max-height: 565) {
-  .container {
-    max-height: 40vh;
-  }
-} */
 @media screen and (max-height: 667px) {
   .container {
     max-height: 45vh;
   }
-  .cardTop img,
-  .cardMid img,
-  .cardBottom img {
-    max-height: 70px;
-  }
+
   .leftCl,
   .rightCl {
     height: fit-content;
@@ -106,11 +119,7 @@ p {
   .container {
     max-height: 50vh;
   }
-  .cardTop img,
-  .cardMid img,
-  .cardBottom img {
-    max-height: 70px;
-  }
+
   .leftCl,
   .rightCl {
     height: 80vh;
@@ -120,5 +129,13 @@ p {
 @media screen and (max-width: 520px) {
   .container {
     grid-template-columns: 1fr;
+  }
+}
+@media screen and (min-width: 520px) {
+  .cardText {
+    display: none;
+  }
+  .rightCl {
+    display: none;
   }
 }

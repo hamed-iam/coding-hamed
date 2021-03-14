@@ -2,14 +2,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  height: 100vh;
-
   padding-top: 10px;
-  background: #131313;
+  background-image: url(../../assets/backgrounds/pexels-sebastiaan-stam-1480690.jpg);
+  background-color: #131313;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+/* .homeCover {
+  position: relative;
+  height: 100%;
+  object-fit: cover;
+} */
+
 @media screen and (max-width: 520px) {
   .main {
-    height: 180vh;
+    height: 105vh;
   }
 }

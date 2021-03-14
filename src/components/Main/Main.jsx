@@ -1,25 +1,56 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import styles from './Main.module.css';
-import AboutMeImg from '../../assets/undraw_moonlight_5ksn (1).svg';
-import ProjectImg from '../../assets/undraw_project_completed_w0oq.svg';
-import ContactImg from '../../assets/undraw_contact_us_15o2.svg';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import AboutMeText from '../../assets/About Me (1).svg';
-import ContactText from '../../assets/Contact (2).svg';
-import ProjectsText from '../../assets/Projects (1).svg';
+import hamedCover from '../../assets/backgrounds/HamedCOVER.png';
+
+const url = 'https://v2.jokeapi.dev/joke/Programming';
+
 const Main = () => {
+  const [jokes, setJokes] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(url)
+      .then(({ data }) => {
+        console.log(data.delivery);
+        console.log(data.setup);
+        setJokes(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  // if (!jokes) {
+  //   return 'loading';
+  // }
+
   return (
     <main className={styles.container}>
       <section className={styles.leftCl}>
         <div className={styles.contentText}>
-          <h4>
-            Hello
-            <br /> I'm Hamed. A freelance Front-End Developer. I specialize in
-            creating interactive experiences using React.
-          </h4>
-          <p>Feel free to contact me if you have any questions.</p>
+          <motion.img
+            src={hamedCover}
+            alt="cover"
+            className={styles.hamedCover}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 7 } }}
+          />
+          <h3>
+            <span>IS</span> CODING ...
+          </h3>
         </div>
-        <div className={styles.joke}>the jokes wil be here</div>
+        <div className={styles.joke}>
+          {jokes && jokes.setup !== undefined && (
+            <div className={styles.jokesText}>
+              <h2>Some Random Joke</h2>
+              <h4>{jokes.setup}</h4>
+              <h5>{jokes.delivery}</h5>
+            </div>
+          )}
+        </div>
       </section>
 
       <motion.section
@@ -32,24 +63,33 @@ const Main = () => {
           animate={{ x: 0, transition: { duration: 2 } }}
           className={styles.cardTop}
         >
-          <img src={AboutMeText} alt="" className={styles.cardTitle} />
-          <img src={AboutMeImg} alt="" />
+          <Link to="/homepage/about" className={styles.link}>
+            <h4 className={styles.cardText}>
+              About <span>Me</span>
+            </h4>
+          </Link>
         </motion.div>
         <motion.div
           initial={{ x: 400 }}
           animate={{ x: 0, transition: { duration: 2 } }}
           className={styles.cardMid}
         >
-          <img src={ProjectsText} alt="" className={styles.cardTitle} />
-          <img src={ProjectImg} alt="" />
+          <Link to="/homepage/projects" className={styles.link}>
+            <h4 className={styles.cardText}>
+              <span>Pro</span>jects
+            </h4>
+          </Link>
         </motion.div>
         <motion.div
           initial={{ x: 300 }}
           animate={{ x: 0, transition: { duration: 2 } }}
           className={styles.cardBottom}
         >
-          <img src={ContactText} className={styles.cardTitle} alt="" />
-          <img src={ContactImg} alt="" />
+          <Link to="/homepage/contact" className={styles.link}>
+            <h4 className={styles.cardText}>
+              C<span>o</span>ntact
+            </h4>
+          </Link>
         </motion.div>
       </motion.section>
     </main>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {} from './styles';
 import styles from './Header.module.css';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/backgrounds/Frame 1.png';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 const Header = () => {
@@ -14,21 +14,20 @@ const Header = () => {
     >
       <div className={styles.navbar}>
         <div className={styles.logo}>
-          {/* <img src={logo} alt="logo" /> */}
-          <Link to="/homepage">
-            <h3> Hamed Ghazali</h3>
+          <Link to="/homepage" className={styles.link}>
+            <img src={logo} alt="logo" />
           </Link>
         </div>
 
         <ul className={styles.menu}>
-          <Link to="/homepage/about">
-            <li>About me</li>
+          <Link to="/homepage/about" className={styles.link}>
+            <li>About</li>
           </Link>
 
-          <Link to="/homepage/projects">
+          <Link to="/homepage/projects" className={styles.link}>
             <li>Projects</li>
           </Link>
-          <Link to="/homepage/contact">
+          <Link to="/homepage/contact" className={styles.link}>
             <li>Contact</li>
           </Link>
         </ul>
