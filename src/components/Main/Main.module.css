@@ -6,12 +6,11 @@
   margin-top: 10px;
   width: 90%;
   display: grid;
-  column-gap: 10px;
+
   grid-template-columns: 1fr 1fr;
 }
 
 .leftCl {
-  border: 2px solid rgb(165, 165, 165);
   border-radius: 4px;
   display: grid;
   row-gap: 20px;
@@ -28,7 +27,7 @@
   color: #d3d3d3;
   justify-self: center;
   align-self: baseline;
-  margin-top: -120px;
+  margin-top: -5rem;
   letter-spacing: 8px;
 }
 .contentText h3 span {
@@ -36,35 +35,26 @@
 }
 .joke {
   margin: 20px 20px 20px 20px;
-  border: 1px solid rgb(165, 165, 165);
+
   border-radius: 4px;
 }
 
 .rightCl {
-  border: 2px solid rgb(165, 165, 165);
-  border-radius: 4px;
   display: grid;
-  row-gap: 8px;
-
   grid-template-rows: 1fr 1fr 1fr;
+  min-height: 5vh;
 }
 .cardTop {
-  border: 1px solid rgb(165, 165, 165);
-  border-radius: 4px;
-  margin: 10px 10px 0 10px;
   display: grid;
+  height: 1vh;
 }
 .cardMid {
-  border: 1px solid rgb(165, 165, 165);
-  border-radius: 4px;
-  margin: 10px 10px 0 10px;
   display: grid;
+  height: 1vh;
 }
 .cardBottom {
-  border: 1px solid rgb(165, 165, 165);
-  border-radius: 4px;
-  margin: 10px 10px 10px 10px;
   display: grid;
+  height: 1vh;
 }
 .link {
   justify-self: center;
