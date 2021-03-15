@@ -4,6 +4,7 @@ import styles from './Main.module.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import hamedCover from '../../assets/backgrounds/HamedCOVER.png';
+import cx from 'classnames';
 
 const url = 'https://v2.jokeapi.dev/joke/Programming';
 
@@ -23,10 +24,6 @@ const Main = () => {
       });
   }, []);
 
-  // if (!jokes) {
-  //   return 'loading';
-  // }
-
   return (
     <main className={styles.container}>
       <section className={styles.leftCl}>
@@ -44,11 +41,15 @@ const Main = () => {
         </div>
         <div className={styles.joke}>
           {jokes && jokes.setup !== undefined && (
-            <div className={styles.jokesText}>
-              <h2>Some Random Joke</h2>
-              <h4>{jokes.setup}</h4>
-              <h5>{jokes.delivery}</h5>
-            </div>
+            <motion.div
+              initial={{ x: -200 }}
+              animate={{ x: 0, transition: { duration: 2 } }}
+              className={cx(styles.jokesText)}
+            >
+              <h2 className={styles.jokesContent}>Some Random Joke for you</h2>
+              <h4 className={styles.jokesContent}>{jokes.setup}</h4>
+              <h5 className={styles.jokesContent}>{jokes.delivery}</h5>
+            </motion.div>
           )}
         </div>
       </section>
