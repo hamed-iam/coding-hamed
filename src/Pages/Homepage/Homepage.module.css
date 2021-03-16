@@ -17,8 +17,8 @@
   object-fit: cover;
 } */
 
-@media screen and (max-width: 520px) {
+/* @media screen and (max-width: 520px) {
   .main {
-    height: 170vh;
+    height: 100vh;
   }
-}
+} */

@@ -46,9 +46,9 @@ const Main = () => {
               animate={{ x: 0, transition: { duration: 2 } }}
               className={cx(styles.jokesText)}
             >
-              <h2 className={styles.jokesContent}>Some Random Joke for you</h2>
-              <h4 className={styles.jokesContent}>{jokes.setup}</h4>
-              <h5 className={styles.jokesContent}>{jokes.delivery}</h5>
+              <h6 className={styles.jokesContent}>Some Random Joke for you</h6>
+              <h6 className={styles.jokesContent}>{jokes.setup}</h6>
+              <p className={styles.jokesContent}>{jokes.delivery}</p>
             </motion.div>
           )}
         </div>

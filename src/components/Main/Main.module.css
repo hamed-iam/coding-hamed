@@ -41,7 +41,7 @@
 .jokesText {
   background-color: rgba(20, 20, 20, 0.7);
   font-family: 'Montserrat', sans-serif;
-  border: 1px solid #2dddf5;
+  box-shadow: 1px 0 5px 0 rgba(88, 88, 88, 0.7);
   border-radius: 4px;
   backdrop-filter: blur(5px);
 }
@@ -85,28 +85,32 @@
   color: #2dddf5;
 }
 .joke {
-  display: grid;
+  display: flex;
+  /* background-color: beige; */
+  max-height: 8em;
 }
 .joke h2 {
   margin-bottom: 4rem;
   font-size: 1rem;
 }
-.joke h2,
-h4,
-h5 {
+.joke h6,
+p {
   color: #d3d3d3;
   justify-self: center;
+  margin: 0.5rem;
 }
 .jokesText {
-  margin: 2rem;
-  justify-self: center;
-  align-self: center;
+  /* margin: 2rem; */
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
 }
 @media screen and (max-height: 610px) {
   .joke {
     position: absolute;
     right: 3%;
-    top: 40%;
+    bottom: 10%;
   }
 }
 @media screen and (max-width: 520px) {
